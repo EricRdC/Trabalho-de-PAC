@@ -28,8 +28,8 @@ void limpatela()
 void presenteVirtual(PlataformaDigital *platj1, PlataformaDigital *platj2, Jogo *presente){
                unsigned int h, i;
                 platj1->setCarteiraDigital(platj1->getCarteiraDigital() - presente->getValorPromocao());
-                    for (i=0; i<platj2->JogosCadastrados.size(); i++){
-                        if (platj2->JogosCadastrados[i]->getNome() == presente->getNome()){
+                    for (i=0; i<platj2->getJogosCadastrados.size(); i++){
+                        if (platj2->getJogosCadastrados[i]->getNome() == presente->getNome()){
                             h=1;
                     }
               }
@@ -38,7 +38,7 @@ void presenteVirtual(PlataformaDigital *platj1, PlataformaDigital *platj2, Jogo 
                    platj2->setCarteiraDigital(platj2->getCarteiraDigital() + presente->getValorPromocao());
               }
             else{
-                    platj2->JogosCadastrados.push_back(presente);
+                    platj2->getJogosCadastrados.push_back(presente);
                     cout << "Jogo presenteado com sucesso!" << endl;
               }
                 }
@@ -127,7 +127,7 @@ do{
         case 3:
                 int selecionarEmpresa();
                 if (select == 1){
-                    if(RiotGames -> jogosDesenvolvidos.size() == 0){
+                    if(RiotGames -> getJogosDesenvolvidos.size() == 0){
                     cout << "Nao ha jogos desenvolvidos!" << endl;
                     Sleep(1000);
                     limpatela();
@@ -136,40 +136,40 @@ do{
                     selecionarPlataformaDig();
                     if(select == 1){
                     cout << "Selecione o jogo que deseja comprar:" << endl;
-                    for(i=0; i < RiotGames -> jogosDesenvolvidos.size(); i++){
-                    cout << i << " - " << RiotGames -> jogosDesenvolvidos[i] -> getNome() << endl;
+                    for(i=0; i < RiotGames -> getJogosDesenvolvidos.size(); i++){
+                    cout << i << " - " << RiotGames -> getJogosDesenvolvidos[i] -> getNome() << endl;
                     }
                     while ((select < 0) || (select > i)){
                     cout << "Digite um jogo nas opcoes corretas" << endl;
                     cin >> select;
                     }
-                        Steam -> comprarJogo(RiotGames ->jogosDesenvolvidos[select]);
+                        Steam -> comprarJogo(RiotGames ->getJogosDesenvolvidos[select]);
                     }
                     else if(select == 2){
                     cout << "Selecione o jogo que deseja comprar:" << endl;
-                    for(i=0; i < RiotGames -> jogosDesenvolvidos.size(); i++){
-                    cout << i << " - " << RiotGames -> jogosDesenvolvidos[i] -> getNome() << endl;
+                    for(i=0; i < RiotGames -> getJogosDesenvolvidos.size(); i++){
+                    cout << i << " - " << RiotGames -> getJogosDesenvolvidos[i] -> getNome() << endl;
                     }
                     while ((select < 0) || (select > i)){
                     cout << "Digite um jogo nas opcoes corretas" << endl;
                     cin >> select;
                     }
-                        Origin -> comprarJogo(RiotGames ->jogosDesenvolvidos[select]);
+                        Origin -> comprarJogo(RiotGames ->getJogosDesenvolvidos[select]);
                     }
                     else if(select == 3){
                     cout << "Selecione o jogo que deseja comprar:" << endl;
-                    for(i=0; i < RiotGames -> jogosDesenvolvidos.size(); i++){
-                    cout << i << " - " << RiotGames -> jogosDesenvolvidos[i] -> getNome() << endl;
+                    for(i=0; i < RiotGames -> getJogosDesenvolvidos.size(); i++){
+                    cout << i << " - " << RiotGames -> getJogosDesenvolvidos[i] -> getNome() << endl;
                     }
                     while ((select < 0) || (select > i)){
                     cout << "Digite um jogo nas opcoes corretas" << endl;
                     cin >> select;
                     }
-                        BattleNet -> comprarJogo(RiotGames ->jogosDesenvolvidos[select]);
+                        BattleNet -> comprarJogo(RiotGames ->getJogosDesenvolvidos[select]);
                     }
                 }
                else if (select == 2){
-                    if(Valve -> jogosDesenvolvidos.size() == 0){
+                    if(Valve -> getJogosDesenvolvidos.size() == 0){
                         cout << "Nao ha jogos desenvolvidos!" << endl;
                         Sleep(1000);
                         limpatela();
@@ -178,40 +178,40 @@ do{
                     selecionarPlataformaDig();
                     if(select == 1){
                     cout << "Selecione o jogo que deseja comprar:" << endl;
-                    for(i=0; i < Valve -> jogosDesenvolvidos.size(); i++){
-                    cout << i << " - " << Valve -> jogosDesenvolvidos[i] -> getNome() << endl;
+                    for(i=0; i < Valve -> getJogosDesenvolvidos.size(); i++){
+                    cout << i << " - " << Valve -> getJogosDesenvolvidos[i] -> getNome() << endl;
                     }
                     while ((select < 0) || (select > i)){
                     cout << "Digite um jogo nas opcoes corretas" << endl;
                     cin >> select;
                     }
-                        Steam -> comprarJogo(Valve ->jogosDesenvolvidos[select]);
+                        Steam -> comprarJogo(Valve ->getJogosDesenvolvidos[select]);
                     }
                     else if(select == 2){
                     cout << "Selecione o jogo que deseja comprar:" << endl;
-                    for(i=0; i < Valve -> jogosDesenvolvidos.size(); i++){
-                    cout << i << " - " << Valve -> jogosDesenvolvidos[i] -> getNome() << endl;
+                    for(i=0; i < Valve -> getJogosDesenvolvidos.size(); i++){
+                    cout << i << " - " << Valve -> getJogosDesenvolvidos[i] -> getNome() << endl;
                     }
                     while ((select < 0) || (select > i)){
                     cout << "Digite um jogo nas opcoes corretas" << endl;
                     cin >> select;
                     }
-                        Origin -> comprarJogo(Valve ->jogosDesenvolvidos[select]);
+                        Origin -> comprarJogo(Valve ->getJogosDesenvolvidos[select]);
                     }
                     else if(select == 3){
                     cout << "Selecione o jogo que deseja comprar:" << endl;
-                    for(i=0; i < Valve -> jogosDesenvolvidos.size(); i++){
-                    cout << i << " - " << Valve -> jogosDesenvolvidos[i] -> getNome() << endl;
+                    for(i=0; i < Valve -> getJogosDesenvolvidos.size(); i++){
+                    cout << i << " - " << Valve -> getJogosDesenvolvidos[i] -> getNome() << endl;
                     }
                     while ((select < 0) || (select > i)){
                     cout << "Digite um jogo nas opcoes corretas" << endl;
                     cin >> select;
                     }
-                        BattleNet -> comprarJogo(Valve ->jogosDesenvolvidos[select]);
+                        BattleNet -> comprarJogo(Valve ->getJogosDesenvolvidos[select]);
                     }
                     }
                else if (select == 3){
-                    if(EA -> jogosDesenvolvidos.size() == 0){
+                    if(EA -> getJogosDesenvolvidos.size() == 0){
                         cout << "Nao ha jogos desenvolvidos!" << endl;
                         Sleep(1000);
                         limpatela();
@@ -220,37 +220,37 @@ do{
                     selecionarPlataformaDig();
                     if(select == 1){
                     cout << "Selecione o jogo que deseja comprar:" << endl;
-                    for(i=0; i < EA -> jogosDesenvolvidos.size(); i++){
-                    cout << i << " - " << EA -> jogosDesenvolvidos[i] -> getNome() << endl;
+                    for(i=0; i < EA -> getJogosDesenvolvidos.size(); i++){
+                    cout << i << " - " << EA -> getJogosDesenvolvidos[i] -> getNome() << endl;
                     }
                     while ((select < 0) || (select > i)){
                     cout << "Digite um jogo nas opcoes corretas" << endl;
                     cin >> select;
                     }
-                        Steam -> comprarJogo(EA ->jogosDesenvolvidos[select]);
+                        Steam -> comprarJogo(EA ->getJogosDesenvolvidos[select]);
                     }
                     else if(select == 2){
                     cout << "Selecione o jogo que deseja comprar:" << endl;
-                    for(i=0; i < EA -> jogosDesenvolvidos.size(); i++){
-                    cout << i << " - " << EA -> jogosDesenvolvidos[i] -> getNome() << endl;
+                    for(i=0; i < EA -> getJogosDesenvolvidos.size(); i++){
+                    cout << i << " - " << EA -> getJogosDesenvolvidos[i] -> getNome() << endl;
                     }
                     while ((select < 0) || (select > i)){
                     cout << "Digite um jogo nas opcoes corretas" << endl;
                     cin >> select;
                     }
-                        Origin -> comprarJogo(EA ->jogosDesenvolvidos[select]);
+                        Origin -> comprarJogo(EA ->getJogosDesenvolvidos[select]);
 
                     }
                     else if(select == 3){
                     cout << "Selecione o jogo que deseja comprar:" << endl;
-                    for(i=0; i < EA -> jogosDesenvolvidos.size(); i++){
-                    cout << i << " - " << EA -> jogosDesenvolvidos[i] -> getNome() << endl;
+                    for(i=0; i < EA -> getJogosDesenvolvidos.size(); i++){
+                    cout << i << " - " << EA -> getJogosDesenvolvidos[i] -> getNome() << endl;
                     }
                     while ((select < 0) || (select > i)){
                     cout << "Digite um jogo nas opcoes corretas" << endl;
                     cin >> select;
                     }
-                        BattleNet -> comprarJogo(EA ->jogosDesenvolvidos[select]);
+                        BattleNet -> comprarJogo(EA ->getJogosDesenvolvidos[select]);
                     }
                }
             Sleep(1000);
@@ -365,21 +365,21 @@ do{
                 cin >> select;
             }
             if (select == 1){
-                if(RiotGames -> jogosDesenvolvidos.size() == 0){
+                if(RiotGames -> getJogosDesenvolvidos.size() == 0){
                     cout << "Nao ha jogos desenvolvidos!" << endl;
                     Sleep(1000);
                     limpatela();
                     break;
                 }else{
                     cout << "Selecione o jogo que deseja comprar:" << endl;
-                    for(i=0; i < RiotGames -> jogosDesenvolvidos.size(); i++){
-                        cout << i << " - " << RiotGames -> jogosDesenvolvidos[i] -> getNome() << endl;
+                    for(i=0; i < RiotGames -> getJogosDesenvolvidos.size(); i++){
+                        cout << i << " - " << RiotGames -> getJogosDesenvolvidos[i] -> getNome() << endl;
                     }
                     while ((select < 0) || (select > i)){
                     cout << "Digite um jogo nas opcoes corretas" << endl;
                     cin >> select;
                     }
-                    Jogo* escolhido = RiotGames->jogosDesenvolvidos[select];
+                    Jogo* escolhido = RiotGames->getJogosDesenvolvidos[select];
                     if(platj1 -> getCarteiraDigital() < escolhido->getValorPromocao()){
                         cout << "Voce nao possui creditos suficientes para comprar este jogo!" << endl;
                         Sleep(1000);
@@ -391,21 +391,21 @@ do{
                 }
             }
                 else if (select == 2){
-                    if(Valve -> jogosDesenvolvidos.size() == 0){
+                    if(Valve -> getJogosDesenvolvidos.size() == 0){
                         cout << "Nao ha jogos desenvolvidos!" << endl;
                         Sleep(1000);
                         limpatela();
                         break;
                     }else{
                     cout << "Selecione o jogo que deseja comprar:" << endl;
-                        for(i=0; i < Valve -> jogosDesenvolvidos.size(); i++){
-                            cout << i << " - " << Valve -> jogosDesenvolvidos[i] -> getNome() << endl;
+                        for(i=0; i < Valve -> getJogosDesenvolvidos.size(); i++){
+                            cout << i << " - " << Valve -> getJogosDesenvolvidos[i] -> getNome() << endl;
                         }
                     while ((select < 0) || (select > i)){
                     cout << "Digite um jogo nas opcoes corretas" << endl;
                     cin >> select;
                     }
-                    Jogo* escolhido = Valve->jogosDesenvolvidos[select];
+                    Jogo* escolhido = Valve->getJogosDesenvolvidos[select];
                         if(platj1 -> getCarteiraDigital() < escolhido->getValorPromocao()){
                             cout << "Voce nao possui creditos suficientes para comprar este jogo!" << endl;
                             Sleep(1000);
@@ -417,15 +417,15 @@ do{
                     }
                 }
                     else if (select == 3){
-                        if(EA -> jogosDesenvolvidos.size() == 0){
+                        if(EA -> getJogosDesenvolvidos.size() == 0){
                             cout << "Nao ha jogos desenvolvidos!" << endl;
                             Sleep(1000);
                             limpatela();
                             break;
                         }else{
                             cout << "Selecione o jogo que deseja comprar:" << endl;
-                            for(i=0; i < EA -> jogosDesenvolvidos.size(); i++){
-                            cout << i << " - " << EA -> jogosDesenvolvidos[i] -> getNome() << endl;
+                            for(i=0; i < EA -> getJogosDesenvolvidos.size(); i++){
+                            cout << i << " - " << EA -> getJogosDesenvolvidos[i] -> getNome() << endl;
                             }
                             while ((select < 0) || (select > i)){
                             cout << "Digite um jogo nas opcoes corretas" << endl;
