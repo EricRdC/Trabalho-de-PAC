@@ -21,7 +21,7 @@ void menu(){
 
 void limpatela()
 {
-0    system("cls");
+    system("cls");
 }
 
 
@@ -48,7 +48,7 @@ int selecionarEmpresa(){
                 cin >> select;
                 while ((select < 1) || (select > 3)){
                 cout << "Digite uma empresa nas opcoes de 1 a 3" << endl;
-                cin >> select
+                cin >> select;
                 return select;
                 }
                 }
@@ -252,6 +252,7 @@ do{
                     }
                         BattleNet -> comprarJogo(EA ->jogosDesenvolvidos[select]);
                     }
+               }
             Sleep(1000);
             limpatela();
             break;
@@ -388,7 +389,7 @@ do{
                     presente = escolhido;
                     }
                 }
-            }else{
+            }
                 else if (select == 2){
                     if(Valve -> jogosDesenvolvidos.size() == 0){
                         cout << "Nao ha jogos desenvolvidos!" << endl;
@@ -414,7 +415,7 @@ do{
                         presente = escolhido;
                         }
                     }
-                }else{
+                }
                     else if (select == 3){
                         if(EA -> jogosDesenvolvidos.size() == 0){
                             cout << "Nao ha jogos desenvolvidos!" << endl;
@@ -441,10 +442,6 @@ do{
                             }
                         }
                     }
-                }
-            }
-
-
             presenteVirtual(platj1, platj2, presente);
             Sleep(1000);
             limpatela();
