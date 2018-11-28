@@ -125,6 +125,7 @@ do{
             limpatela();
             break;
         case 3:
+                cout << endl << "Sua carteira possui " << Steam->getCarteiraDigital() << " creditos!" << endl << endl;
                 int selecionarEmpresa();
                 if (select == 1){
                     if(RiotGames -> getJogosDesenvolvidos().size() == 0){
